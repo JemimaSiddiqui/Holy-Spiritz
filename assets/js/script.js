@@ -49,17 +49,37 @@ cheers.addEventListener('click', function chosenDrink() {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
+
+      // create a random value to pick a randokm version of the drink selected //
+    var rand = Math.floor(Math.random() * data.drinks.length);
+
+    document.getElementById("randomName").innerText = data.drinks[rand].strDrink
+      document.getElementById("ingredients1").innerText = data.drinks[rand].strIngredient1
+      document.getElementById("ingredients2").innerText = data.drinks[rand].strIngredient2
+      document.getElementById("ingredients3").innerText = data.drinks[rand].strIngredient3
+      document.getElementById("ingredients4").innerText = data.drinks[rand].strIngredient4
+      document.getElementById("ingredients5").innerText = data.drinks[rand].strIngredient5
+      document.getElementById("ingredients6").innerText = data.drinks[rand].strIngredient6
+      document.getElementById("ingredients7").innerText = data.drinks[rand].strIngredient7
+      document.getElementById("ingredients8").innerText = data.drinks[rand].strIngredient8
+      document.getElementById("ingredients9").innerText = data.drinks[rand].strIngredient9
+      document.getElementById("ingredients10").innerText = data.drinks[rand].strIngredient10
+      document.getElementById("ingredients11").innerText = data.drinks[rand].strIngredient11
+      document.getElementById("ingredients12").innerText = data.drinks[rand].strIngredient12
+      document.getElementById("ingredients13").innerText = data.drinks[rand].strIngredient13
+      document.getElementById("ingredients14").innerText = data.drinks[rand].strIngredient14
+      document.getElementById("ingredients15").innerText = data.drinks[rand].strIngredient15
+      document.getElementById("glassType").innerText = data.drinks[rand].strGlass + " recommended"
+      document.getElementById("instructions").innerText = data.drinks[rand].strInstructions
+    console.log(data.drinks[0]);
+
   })
-
-
     x.style.display = "block"; 
     y.style.display = "none";
 
  }) 
  
- 
- 
+
 
  // bouncing back button in the corner after searching //
  function showTop() {
