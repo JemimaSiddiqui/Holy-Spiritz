@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="/_next/static/css/2f321e868ab8f6ccf65d.css" data-n-g="">
+    <!-- <link rel="stylesheet" href="/_next/static/css/2f321e868ab8f6ccf65d.css" data-n-g=""> -->
     <title></title>
 </head>
 <body class="bg-gray-900">
@@ -33,13 +33,13 @@
             <div class="flex w-full md:justify-start justify-center items-end">
               <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4">
                 <label for="hero-field" class="leading-7 text-sm text-gray-400">Drink Search</label>
-                <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-pink-900 focus:bg-transparent focus:border-pink-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <input type="text" id="userSearch" name="hero-field" class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-pink-900 focus:bg-transparent focus:border-pink-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
-              <a href="#drinkarea"><button onclick="showDrink()" class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg zoom">Cheers!</button></a>
+              <a href="#drinkarea"><button id="cheers" class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg zoom">Cheers!</button></a>
             </div>
             <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Daiquiri, Old Fashioned, Negroni, Margarita...</p>
             <div class="flex lg:flex-row md:flex-col text-gray-300">
-                <a href="#drinkarea"><button onclick="showDrink()" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg zoom">I'm feeling lucky!</button></a>
+                <a href="#drinkarea"><button  id="feelingLucky" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg zoom">I'm feeling lucky!</button></a>
             </div>
           </div>
         </div>
@@ -74,32 +74,27 @@
 
 
               <div class="flex-grow">
+                <h1 id="randomName" class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white"></h1>
                 <h2 class="text-white text-lg title-font font-medium mb-3">Ingredients</h2>
-                <p class="leading-relaxed text-base">This is where the ingredients goes for the drink, shouldn't be too hard, right?</p>
                 <br>
-                <h2 class="leading-relaxed text-base">Lemon</h2>
-                <h2 class="leading-relaxed text-base">Lime</h2>
-                <h2 class="leading-relaxed text-base">Ice</h2>
-                <h2 class="leading-relaxed text-base">A glass</h2>
-                <h2 class="leading-relaxed text-base">Alcohol</h2>
-                <br>
-                <h2 class="text-white text-lg title-font font-medium mb-3">Instructions</h2>
-                <p class="leading-relaxed text-base">This is where the instructions goes for the drink, shouldn't be too hard, right?</p>
-                <br>
-                <h2 class="leading-relaxed text-base">1. Put The Lemon In The Glass</h2>
-                <h2 class="leading-relaxed text-base">2. Put The Lime In The Lemon</h2>
-                <h2 class="leading-relaxed text-base">3. Put The Ice In The Glass</h2>
-                <h2 class="leading-relaxed text-base">4. Add The Alcohol</h2>
-                <h2 class="leading-relaxed text-base">5. Drink!</h2>
+                <h2 id='ingredients1' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients2' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients3' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients4' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients5' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients6' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients7' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients8' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients9' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients10' class="leading-relaxed text-base"></h2>
+                
+
                 <br>
                 <h2 class="text-white text-lg title-font font-medium mb-3">Instructions</h2>
-                <p class="leading-relaxed text-base">This is where the instructions goes for the drink, shouldn't be too hard, right?</p>
                 <br>
-                <h2 class="leading-relaxed text-base">1. Put The Lemon In The Glass</h2>
-                <h2 class="leading-relaxed text-base">2. Put The Lime In The Lemon</h2>
-                <h2 class="leading-relaxed text-base">3. Put The Ice In The Glass</h2>
-                <h2 class="leading-relaxed text-base">4. Add The Alcohol</h2>
-                <h2 class="leading-relaxed text-base">5. Drink!</h2>
+                <p id="instructions" class="leading-relaxed text-base"></p>
+                <br>
+                <h2 id='glassType' class="leading-relaxed text-base"></h2>
               </div>
             </div>
               </div>
