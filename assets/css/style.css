@@ -1,0 +1,66 @@
+html {
+    scroll-behavior: smooth;
+   }
+   
+   a {
+    text-decoration: none;
+    color: black;
+   } 
+   
+   #down {
+    margin-top: 100%;
+    padding-bottom: 25%;
+   } 
+
+body {
+    width: 90%;
+    margin: 0 auto;
+  }
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 30px;
+  }
+  
+  .drinkimg {
+
+  }
+  .main2 {
+    display: block;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+  .backbtn{
+    position:absolute;
+    top:35px;
+    left:35px;
+    padding-left:10px;
+    padding-right:10px;
+   }
+  .main {
+    display: block;
+    margin-left: 15%;
+    margin-right: auto;
+  }
+  .zoom {
+    transition: transform .2s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  .zoomimg {
+    transition: transform .5s; /* Animation */
+  }
+  
+  .zoomimg:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  .search {
+      margin-bottom: 20px;
+  }
+  .feelinglucky {
+      margin-top: 20px;
+  }
