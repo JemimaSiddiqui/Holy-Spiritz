@@ -18,6 +18,7 @@ feelingLucky.addEventListener('click', function randomDrink() {
     .then(function (data) {
       // appending h2 and p elements with ingredients, instructions and drink name using vanilla js //
       // some drinks can have up to 10 ingredients, even if they have less it doesnt throw an error and page looks the same either way //
+      // considering using jquery and create element and append instead? //
       document.getElementById("randomName").innerText = data.drinks[0].strDrink
       document.getElementById("ingredients1").innerText = data.drinks[0].strIngredient1
       document.getElementById("ingredients2").innerText = data.drinks[0].strIngredient2
@@ -34,7 +35,8 @@ feelingLucky.addEventListener('click', function randomDrink() {
       // Drink object for reference //
       console.log(data.drinks[0]);
     })
-
+    x.style.display = "block"; 
+    y.style.display = "none";
  
 })
 
