@@ -24,6 +24,8 @@ var cheers = document.getElementById("cheers")
 var userSearch = document.getElementById("userSearch")
 var searchHistory = [];
 var drinkList = document.getElementById("drink-list")
+// API Key
+let APIKEY = "Hilq8ig6MSNsAShBtd0HNgLcZHQwEy3Z"
 
 // click event for random button //
 feelingLucky.addEventListener('click', function randomDrink() {
@@ -51,6 +53,9 @@ feelingLucky.addEventListener('click', function randomDrink() {
       document.getElementById("instructions").innerText = data.drinks[0].strInstructions
       // Drink object for reference //
       console.log(data.drinks[0]);
+      var rand = data.drinks[0].strDrink
+      console.log (rand)
+      rendGif(rand)
     })
     x.style.display = "block"; 
     y.style.display = "none";
@@ -91,6 +96,10 @@ cheers.addEventListener('click', function chosenDrink() {
       document.getElementById("instructions").innerText = data.drinks[rand].strInstructions
     console.log(data.drinks[0]);
 
+    var rand = data.drinks[0].strDrink
+    console.log (rand)
+
+    rendGif(rand)
   })
     x.style.display = "block"; 
     y.style.display = "none";
@@ -201,3 +210,32 @@ $("#clear-button").click(() => {
   //console.log("clear button clicked")
   init(); 
 });
+  // Render gif result
+
+  function rendGif(rand){
+    
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
+    
+      url = url.concat(rand);  
+    
+    console.log(url);
+    // get gif from giphy api
+        fetch(url)
+        .then(response => response.json())
+    //  rendering
+        .then(content =>{
+    
+        changeUrl(content.data[0].images.downsized.url, content.data[0].title);
+    
+      })
+      .catch(err=>{
+    })
+    }
+  
+  //  change img.src function
+
+  function changeUrl (url, title){
+    var gif = document.getElementById("gif");
+  gif.src = url;
+  gif.alt = title;
+  }
