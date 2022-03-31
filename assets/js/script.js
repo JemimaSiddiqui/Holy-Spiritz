@@ -1,5 +1,20 @@
 var x = document.getElementById("drinkarea");
 var y = document.getElementById("top");
+var drink1 = document.getElementById("drink-list1");
+var drink2 = document.getElementById("drink-list2");
+var drink3 = document.getElementById("drink-list3");
+var drink4 = document.getElementById("drink-list4");
+var drink5 = document.getElementById("drink-list5");
+var drink6 = document.getElementById("drink-list6");
+var drink7 = document.getElementById("drink-list7");
+drink1.style.display = "none"; 
+drink2.style.display = "none"; 
+drink3.style.display = "none"; 
+drink4.style.display = "none"; 
+drink5.style.display = "none"; 
+drink6.style.display = "none"; 
+drink7.style.display = "none"; 
+var drinkListDisplay = document.getElementById("drink-list");
 x.style.display = "none";
 y.style.display = "block";
 // linking both buttons //
@@ -88,20 +103,55 @@ cheers.addEventListener('click', function chosenDrink() {
   $(drinkList).html("");
 
   for (var i = 0; i < searchHistory.length; i++) {
-      var drinkName = searchHistory[i];
+        //var drinkName = searchHistory[i];
 
-      var li = document.createElement("p");
-      $(li).html("<span>" + drinkName + "</span>");
-      $(li).attr("data-index", i);
+        //var li = document.createElement("p");
+        //$(li).html("<span>" + drinkName + "</span>");
+      // $(li).attr("drink-index", i);
 
-      $(drinkList).append(li);
-  }
+       // $(drinkList).append(li);
+        console.log(drinkList);
+        if(searchHistory[0] !== undefined){
+          console.log("here 0"); 
+          document.getElementById("drink-list1").innerHTML = searchHistory[0];
+          drink1.style.display = "inline";  
+            
+        }
+        if(searchHistory[1] !== undefined){
+          console.log(searchHistory[1]); 
+          document.getElementById("drink-list2").innerHTML = searchHistory[1];
+          drink2.style.display = "inline";    
+        }
+        if(searchHistory[2] !== undefined){
+          document.getElementById("drink-list3").innerHTML = searchHistory[2];
+          drink3.style.display = "inline";  
+            
+        }
+        if(searchHistory[3] !== undefined){
+          document.getElementById("drink-list4").innerHTML = searchHistory[3];
+          drink4.style.display = "inline";  
+            
+        }
+        if(searchHistory[4] !== undefined){
+          document.getElementById("drink-list5").innerHTML = searchHistory[4];
+          drink5.style.display = "inline";  
+            
+        }
+        if(searchHistory[5] !== undefined){
+          document.getElementById("drink-list6").innerHTML = searchHistory[5];
+          drink6.style.display = "inline";  
+            
+        }
+        if(searchHistory[6] !== undefined){
+          document.getElementById("drink-list7").innerHTML = searchHistory[6];
+          drink7.style.display = "inline";      
+        }
+    }
 }
- 
+
  function setDrinks() {
   localStorage.setItem("drinkNames", JSON.stringify(searchHistory));
 }
-
 
  // bouncing back button in the corner after searching //
  function showTop() {
@@ -115,6 +165,23 @@ cheers.addEventListener('click', function chosenDrink() {
   if (storedDrink !== null) {
     searchHistory = storedDrink;
   }
+  else {
+    searchHistory = []; 
+  }
   renderDrinks();
  }
  init();
+
+ // When the "Clear" button is clicked on the screen 
+$("#clear-button").click(() => {
+  localStorage.removeItem("drinkNames"); //remove that drink from the list 
+  drink1.style.display = "none"; 
+  drink2.style.display = "none"; 
+  drink3.style.display = "none"; 
+  drink4.style.display = "none"; 
+  drink5.style.display = "none"; 
+  drink6.style.display = "none"; 
+  drink7.style.display = "none"; 
+  //console.log("clear button clicked")
+  init(); 
+});
