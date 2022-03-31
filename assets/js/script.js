@@ -97,12 +97,10 @@ cheers.addEventListener('click', function chosenDrink() {
 
       $(drinkList).append(li);
 
-      // only shows 8 most recent searches from the local storage on the screen //
-      if (searchHistory.length === 9) {
-        searchHistory.shift();
+      
       }
   }
-}
+
  
  function setDrinks() {
   localStorage.setItem("drinkNames", JSON.stringify(searchHistory));
@@ -113,6 +111,10 @@ cheers.addEventListener('click', function chosenDrink() {
  function showTop() {
   x.style.display = "none";
     y.style.display = "block";
+// only shows 8 most recent searches from the local storage on the screen //
+    if (searchHistory.length === 9) {
+      searchHistory.shift();
+}
  }
 
  function init() {
@@ -120,6 +122,10 @@ cheers.addEventListener('click', function chosenDrink() {
 
   if (storedDrink !== null) {
     searchHistory = storedDrink;
+  }
+  // only shows 8 most recent searches from the local storage on the screen //
+  if (searchHistory.length === 9) {
+        searchHistory.shift();
   }
   renderDrinks();
  }
