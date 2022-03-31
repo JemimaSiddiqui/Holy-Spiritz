@@ -87,6 +87,7 @@ cheers.addEventListener('click', function chosenDrink() {
  function renderDrinks() {
   $(drinkList).html("");
 
+
   for (var i = 0; i < searchHistory.length; i++) {
       var drinkName = searchHistory[i];
 
@@ -95,6 +96,11 @@ cheers.addEventListener('click', function chosenDrink() {
       $(li).attr("data-index", i);
 
       $(drinkList).append(li);
+
+      // only shows 8 most recent searches from the local storage on the screen //
+      if (searchHistory.length === 9) {
+        searchHistory.shift();
+      }
   }
 }
  
