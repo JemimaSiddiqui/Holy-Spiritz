@@ -113,20 +113,7 @@ cheers.addEventListener('click', function chosenDrink() {
 
 
   for (var i = 0; i < searchHistory.length; i++) {
-        //var drinkName = searchHistory[i];
-
-        //var li = document.createElement("p");
-        //$(li).html("<span>" + drinkName + "</span>");
-      // $(li).attr("drink-index", i);
-
-      $(drinkList).append(li);
-
-      
-      }
-  }
-
- 
-       // $(drinkList).append(li);
+       
         console.log(drinkList);
         if(searchHistory[0] !== undefined){
           console.log("here 0"); 
@@ -163,12 +150,13 @@ cheers.addEventListener('click', function chosenDrink() {
           document.getElementById("drink-list7").innerHTML = searchHistory[6];
           drink7.style.display = "inline";      
         }
-    }
+      }
     if(searchHistory.length === 7){
       clearAll(); 
     }
-    
-}
+        
+  }
+  
 
 function clearAll(){
   localStorage.removeItem("drinkNames"); //remove that drink from the list 
