@@ -7,6 +7,8 @@ var feelingLucky = document.getElementById("feelingLucky")
 var cheers = document.getElementById("cheers")
 // linking input bar //
 var userSearch = document.getElementById("userSearch")
+var searchHistory = [];
+var drinkList = document.getElementById("drink-list")
 
 // click event for random button //
 feelingLucky.addEventListener('click', function randomDrink() {
@@ -44,6 +46,7 @@ feelingLucky.addEventListener('click', function randomDrink() {
 cheers.addEventListener('click', function chosenDrink() {
   
   var searchValue = userSearch.value.trim();
+  searchHistory.push(searchValue);
   var chosenApi = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchValue
   fetch(chosenApi).then(function (response) {
     return response.json();
@@ -76,9 +79,28 @@ cheers.addEventListener('click', function chosenDrink() {
   })
     x.style.display = "block"; 
     y.style.display = "none";
+    setDrinks();
+    renderDrinks();
 
  }) 
+
+ function renderDrinks() {
+  $(drinkList).html("");
+
+  for (var i = 0; i < searchHistory.length; i++) {
+      var drinkName = searchHistory[i];
+
+      var li = document.createElement("p");
+      $(li).html("<span>" + drinkName + "</span>");
+      $(li).attr("data-index", i);
+
+      $(drinkList).append(li);
+  }
+}
  
+ function setDrinks() {
+  localStorage.setItem("drinkNames", JSON.stringify(searchHistory));
+}
 
 
  // bouncing back button in the corner after searching //
@@ -86,3 +108,13 @@ cheers.addEventListener('click', function chosenDrink() {
   x.style.display = "none";
     y.style.display = "block";
  }
+
+ function init() {
+  var storedDrink = JSON.parse(localStorage.getItem("drinkNames"));
+
+  if (storedDrink !== null) {
+    searchHistory = storedDrink;
+  }
+  renderDrinks();
+ }
+ init();
