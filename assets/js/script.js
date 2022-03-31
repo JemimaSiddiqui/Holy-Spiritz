@@ -147,6 +147,22 @@ cheers.addEventListener('click', function chosenDrink() {
           drink7.style.display = "inline";      
         }
     }
+    if(searchHistory.length === 7){
+      clearAll(); 
+    }
+    
+}
+
+function clearAll(){
+  localStorage.removeItem("drinkNames"); //remove that drink from the list 
+      drink1.style.display = "none"; 
+      drink2.style.display = "none"; 
+      drink3.style.display = "none"; 
+      drink4.style.display = "none"; 
+      drink5.style.display = "none"; 
+      drink6.style.display = "none"; 
+      drink7.style.display = "none"; 
+      init(); 
 }
 
  function setDrinks() {
