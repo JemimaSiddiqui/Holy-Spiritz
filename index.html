@@ -9,17 +9,27 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="/_next/static/css/2f321e868ab8f6ccf65d.css" data-n-g=""> -->
-    <title></title>
+    <title>Holy Spiritz - The Worlds Best Drink Finder</title>
 </head>
 <body class="bg-gray-900">
 <div id="top">
+
+
+    <!-- Start of logo, gives animation and zoom on hover -->
     <header>
         <div class="row">
           <div class="logo-row">
-            <img src="./assets/images/HOLY SPIRITZ.png" alt="logo" class="animate-pulse logo zoom">
+            <img src="./assets/images/HOLY_SPIRITZ.png" alt="logo" class="animate-pulse logo zoom">
           </div>
         </div>
       </header>
+
+
+
+
+
+
+      <!-- Drink on right hand side of screen -->
 
       <section class="main text-gray-400 bg-gray-900 body-font canbehidden">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -34,14 +44,20 @@
                 <label for="hero-field" class="leading-7 text-sm text-gray-400">Drink Search</label>
                 <input type="text" id="userSearch" name="hero-field" class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-pink-900 focus:bg-transparent focus:border-pink-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
-              <a href="#drinkarea"><button id="cheers" class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg zoom">Cheers!</button></a>
-            </div>
 
+              <!-- Buttons -->
+              <a href="#drinkarea"><button id="cheers" class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg zoom">Cheers!</button></a>
+              <a href="#drinkarea"><button  id="feelingLucky" class="ml-3 inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg zoom">I'm feeling lucky!</button></a>
+           
+            </div>
+            <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Daiquiri, Old Fashioned, Negroni, Margarita...</p>
+
+
+            <!-- This section is for the "tags" that appear for recent searches as well as the clear button -->
             <div class="tags">
               <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-green-200 uppercase last:mr-0 mr-1">
                 <button id="clear-button">CLEAR</button>
               </span>
-              <table id="drink-list">
               <span id="drink-list1" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 uppercase last:mr-0 mr-1">
                 pink
               </span>
@@ -63,19 +79,13 @@
               <span id="drink-list7" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 uppercase last:mr-0 mr-1">
                 pink
               </span>
-            </table>
-            </div>
-
-            <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Daiquiri, Old Fashioned, Negroni, Margarita...</p>
-            <div class="flex lg:flex-row md:flex-col text-gray-300">
-                <a href="#drinkarea"><button  id="feelingLucky" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg zoom">I'm feeling lucky!</button></a>
             </div>
           </div>
         </div>
     </div>
       </section>
 
-      <section  class="main2 text-gray-400 bg-gray-900 body-font">
+      <!-- <section class="main2 text-gray-400 bg-gray-900 body-font"> -->
           
           <div id="drinkarea">
         <button onclick="showTop()" class="animate-bounce backbtn inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg zoom">
@@ -101,36 +111,35 @@
                 <h1 id="randomName" class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white"></h1>
                 <h2 class="text-white text-lg title-font font-medium mb-3">Ingredients</h2>
                 <br>
-                <h2 id='ingredients1' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients2' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients3' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients4' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients5' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients6' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients7' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients8' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients9' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients10' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients11' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients12' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients13' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients14' class="leading-relaxed text-base"></h2>
-                <h2 id='ingredients15' class="leading-relaxed text-base"></h2>
+                <h2 id='ingredients1' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients2' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients3' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients4' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients5' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients6' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients7' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients8' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients9' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients10' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients11' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients12' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients13' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients14' class="leading-relaxed text-white"></h2>
+                <h2 id='ingredients15' class="leading-relaxed text-white"></h2>
                 
 
                 <br>
                 <h2 class="text-white text-lg title-font font-medium mb-3">Instructions</h2>
                 <br>
-                <p id="instructions" class="leading-relaxed text-base"></p>
+                <p id="instructions" class="leading-relaxed text-white"></p>
                 <br>
-                <h2 id='glassType' class="leading-relaxed text-base"></h2>
+                <h2 id='glassType' class="leading-relaxed text-white"></h2>
               </div>
             </div>
               </div>
               
             </div>
         </div>
-    </div>
 
 
       <script src="./assets/js/script.js"></script>

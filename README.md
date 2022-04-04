@@ -24,8 +24,9 @@ Below is an image of the Holy Spritiz main page.
 
 ### Viewing the homepage 
 
-In order to access the  Weather Dashboard application, navigate to the following link: 
- [Holy Spiritz page](ttps://github.com/JemimaSiddiqui/Project_1_Group-B.git). 
+
+In order to access Holy Spiritz, navigate to the following link: 
+ [Holy Spiritz page](https://jemimasiddiqui.github.io/Project_1_Group-B/). 
 
 ### Downloading Visual Studio Code 
 

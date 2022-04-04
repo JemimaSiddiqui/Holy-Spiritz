@@ -61,8 +61,10 @@ body {
   .search {
       margin-bottom: 20px;
   }
-  .feelinglucky {
+
+.feelingLucky {
       margin-top: 20px;
+      margin-right: 20px;
   }
 
 .search-list-container {
