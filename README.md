@@ -34,7 +34,7 @@ In order to access Holy Spiritz, navigate to the following link:
 
 ### Pulling the repository from Git 
 
-If you would like to acess the source code (HTML, CSS and JavaScript files), please navigate to the following public Github repository [Github Repository](https://jemimasiddiqui.github.io/Project_1_Group-B/). 
+If you would like to acess the source code (HTML, CSS and JavaScript files), please navigate to the following public Github repository [Github Repository](https://github.com/JemimaSiddiqui/Project_1_Group-B.git). 
 
 * Clone the repository to your local desktop using the following steps:
 
