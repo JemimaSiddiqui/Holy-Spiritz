@@ -1,5 +1,7 @@
+// linking two main displays //
 var x = document.getElementById("drinkarea");
 var y = document.getElementById("top");
+// linking recently search span items //
 var drink1 = document.getElementById("drink-list1");
 var drink2 = document.getElementById("drink-list2");
 var drink3 = document.getElementById("drink-list3");
@@ -7,6 +9,7 @@ var drink4 = document.getElementById("drink-list4");
 var drink5 = document.getElementById("drink-list5");
 var drink6 = document.getElementById("drink-list6");
 var drink7 = document.getElementById("drink-list7");
+// declaring display none on spans //
 drink1.style.display = "none"; 
 drink2.style.display = "none"; 
 drink3.style.display = "none"; 
@@ -15,6 +18,7 @@ drink5.style.display = "none";
 drink6.style.display = "none"; 
 drink7.style.display = "none"; 
 var drinkListDisplay = document.getElementById("drink-list");
+// setting y style display as the initial front page display, and the alternate as none //
 x.style.display = "none";
 y.style.display = "block";
 // linking both buttons //
@@ -24,7 +28,7 @@ var cheers = document.getElementById("cheers")
 var userSearch = document.getElementById("userSearch")
 var searchHistory = [];
 var drinkList = document.getElementById("drink-list")
-// API Key
+// API Key for giphy api //
 let APIKEY = "Hilq8ig6MSNsAShBtd0HNgLcZHQwEy3Z"
 
 // click event for random button //
@@ -51,12 +55,16 @@ feelingLucky.addEventListener('click', function randomDrink() {
       document.getElementById("ingredients10").innerText = data.drinks[0].strIngredient10
       document.getElementById("glassType").innerText = data.drinks[0].strGlass + " recommended"
       document.getElementById("instructions").innerText = data.drinks[0].strInstructions
-      // Drink object for reference //
+      // console logging drink object for reference //
       console.log(data.drinks[0]);
+      // declaring drink object as a variable to use in giphy fetch function //
       var rand = data.drinks[0].strDrink
       console.log (rand)
+      // used variable in giphy fetch function //
       rendGif(rand)
     })
+
+    // changes style from initial front page style to searched page //
     x.style.display = "block"; 
     y.style.display = "none";
  
@@ -66,6 +74,7 @@ feelingLucky.addEventListener('click', function randomDrink() {
 cheers.addEventListener('click', function chosenDrink() {
   
   var searchValue = userSearch.value.trim();
+  // pushing user search into the empty search history array to then be rendered onto recent history list //
   searchHistory.push(searchValue);
   var chosenApi = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchValue
   fetch(chosenApi).then(function (response) {
@@ -73,7 +82,7 @@ cheers.addEventListener('click', function chosenDrink() {
   })
   .then(function (data) {
 
-      // create a random value to pick a randokm version of the drink selected //
+      // create a random value to pick a random version of the drink that the user typed in //
     var rand = Math.floor(Math.random() * data.drinks.length);
 
     document.getElementById("randomName").innerText = data.drinks[rand].strDrink
@@ -95,30 +104,24 @@ cheers.addEventListener('click', function chosenDrink() {
       document.getElementById("glassType").innerText = data.drinks[rand].strGlass + " recommended"
       document.getElementById("instructions").innerText = data.drinks[rand].strInstructions
     console.log(data.drinks[0]);
-
+      // declaring drink object as a variable to use in giphy fetch function //
     var rand = data.drinks[0].strDrink
     console.log (rand)
 
     rendGif(rand)
   })
-    x.style.display = "block"; 
-    y.style.display = "none";
+  x.style.display = "block"; 
+  y.style.display = "none";
+  // setting the users search into local storage, and then running the render function to apply them to the recent history spans //
     setDrinks();
     renderDrinks();
-
  }) 
 
  function renderDrinks() {
   $(drinkList).html("");
 
   for (var i = 0; i < searchHistory.length; i++) {
-        //var drinkName = searchHistory[i];
-
-        //var li = document.createElement("p");
-        //$(li).html("<span>" + drinkName + "</span>");
-      // $(li).attr("drink-index", i);
-
-       // $(drinkList).append(li);
+       
         console.log(drinkList);
         if(searchHistory[0] !== undefined){
           console.log("here 0"); 
@@ -155,12 +158,13 @@ cheers.addEventListener('click', function chosenDrink() {
           document.getElementById("drink-list7").innerHTML = searchHistory[6];
           drink7.style.display = "inline";      
         }
-    }
+      }
     if(searchHistory.length === 7){
       clearAll(); 
     }
-    
-}
+        
+  }
+  
 
 function clearAll(){
   localStorage.removeItem("drinkNames"); //remove that drink from the list 
@@ -182,6 +186,10 @@ function clearAll(){
  function showTop() {
   x.style.display = "none";
     y.style.display = "block";
+// only shows 8 most recent searches from the local storage on the screen //
+    if (searchHistory.length === 9) {
+      searchHistory.shift();
+}
  }
 
  function init() {
