@@ -25,7 +25,7 @@ var userSearch = document.getElementById("userSearch")
 var searchHistory = [];
 var drinkList = document.getElementById("drink-list")
 // API Key
-let APIKEY = "Hilq8ig6MSNsAShBtd0HNgLcZHQwEy3Z"
+const APIKEY = "Hilq8ig6MSNsAShBtd0HNgLcZHQwEy3Z"
 
 // click event for random button //
 feelingLucky.addEventListener('click', function randomDrink() {
@@ -53,9 +53,9 @@ feelingLucky.addEventListener('click', function randomDrink() {
       document.getElementById("instructions").innerText = data.drinks[0].strInstructions
       // Drink object for reference //
       console.log(data.drinks[0]);
-      var rand = data.drinks[0].strDrink
-      console.log (rand)
-      rendGif(rand)
+      var nameOfDrink = data.drinks[0].strDrink
+      // console.log (nameOfDrink)
+      rendGif(nameOfDrink)
     })
     x.style.display = "block"; 
     y.style.display = "none";
@@ -73,7 +73,7 @@ cheers.addEventListener('click', function chosenDrink() {
   })
   .then(function (data) {
 
-      // create a random value to pick a randokm version of the drink selected //
+      // create a random value to pick a random version of the drink selected //
     var rand = Math.floor(Math.random() * data.drinks.length);
 
     document.getElementById("randomName").innerText = data.drinks[rand].strDrink
@@ -96,30 +96,23 @@ cheers.addEventListener('click', function chosenDrink() {
       document.getElementById("instructions").innerText = data.drinks[rand].strInstructions
     console.log(data.drinks[0]);
 
-    var rand = data.drinks[0].strDrink
-    console.log (rand)
+    var nameOfDrink = data.drinks[0].strDrink
+    // console.log (nameOfDrink)
 
-    rendGif(rand)
+    rendGif(nameOfDrink)
   })
     x.style.display = "block"; 
     y.style.display = "none";
     setDrinks();
     renderDrinks();
-
  }) 
 
+//  The renderDrinks function renders a list of previously searched drinks
  function renderDrinks() {
   $(drinkList).html("");
 
   for (var i = 0; i < searchHistory.length; i++) {
-        //var drinkName = searchHistory[i];
 
-        //var li = document.createElement("p");
-        //$(li).html("<span>" + drinkName + "</span>");
-      // $(li).attr("drink-index", i);
-
-       // $(drinkList).append(li);
-        console.log(drinkList);
         if(searchHistory[0] !== undefined){
           console.log("here 0"); 
           document.getElementById("drink-list1").innerHTML = searchHistory[0];
@@ -162,8 +155,9 @@ cheers.addEventListener('click', function chosenDrink() {
     
 }
 
+// when the 7th drink is searched the list will automatically clear
 function clearAll(){
-  localStorage.removeItem("drinkNames"); //remove that drink from the list 
+  localStorage.removeItem("drinkNames"); 
       drink1.style.display = "none"; 
       drink2.style.display = "none"; 
       drink3.style.display = "none"; 
@@ -180,10 +174,11 @@ function clearAll(){
 
  // bouncing back button in the corner after searching //
  function showTop() {
-  x.style.display = "none";
+    x.style.display = "none";
     y.style.display = "block";
  }
 
+//  drinks that are searched are stored
  function init() {
   var storedDrink = JSON.parse(localStorage.getItem("drinkNames"));
 
@@ -197,7 +192,8 @@ function clearAll(){
  }
  init();
 
- // When the "Clear" button is clicked on the screen 
+// When the "Clear" button is clicked on the screen 
+//  clears the searched items
 $("#clear-button").click(() => {
   localStorage.removeItem("drinkNames"); //remove that drink from the list 
   drink1.style.display = "none"; 
@@ -210,30 +206,23 @@ $("#clear-button").click(() => {
   //console.log("clear button clicked")
   init(); 
 });
-  // Render gif result
 
-  function rendGif(rand){
-    
+// Render gif result
+// Gets the Gif url from the giphy Api
+// Then changes the image source URL to the gif url
+
+  function rendGif(x){
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
-    
-      url = url.concat(rand);  
-    
-    console.log(url);
-    // get gif from giphy api
+      url = url.concat(x);  
         fetch(url)
         .then(response => response.json())
-    //  rendering
         .then(content =>{
-    
         changeUrl(content.data[0].images.downsized.url, content.data[0].title);
-    
       })
       .catch(err=>{
     })
-    }
-  
+  }
   //  change img.src function
-
   function changeUrl (url, title){
     var gif = document.getElementById("gif");
   gif.src = url;
