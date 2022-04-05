@@ -4,7 +4,7 @@ Project 1 by Andrew, Leo, Rob and Jemima.
 
 # About the Project - Weather Dashboard 
  
-The Holy Spritiz Main Page allows users to search for cocktails of their choice to be presented with the ingredients, instruction, glass recommended to be used to serve the selected cocktail and a witty giph related to the cocktail. Users can also see a list of their recently searched drinks (up to 7 drinks). They can also search for a cocktail randomly selected for them. 
+The Holy Spritiz Main Page allows users to search for cocktails of their choice to be presented with the ingredients, instruction, glass recommended to be used to serve the selected cocktail and a witty gif related to the cocktail. Users can also see a list of their recently searched drinks (up to 7 drinks). They can also search for a cocktail randomly selected for them. 
 
 Below is an image of the Holy Spritiz main page. 
 
@@ -59,7 +59,7 @@ If you would like to acess the source code (HTML, CSS and JavaScript files), ple
 
 ## Usage 
 
-This section contains instructions on how to use the Work Day Scheduler Application. 
+This section contains instructions on how to use the Holy Spiritz Application. 
 
 1. Application page: 
 
@@ -69,7 +69,7 @@ Below is an image of the Holy Spiritz main page.
 
 2. Input field, "Cheers!" and "I'm feeling lucky" Button:
 
-A user can input the name of a cocktail of their choice and click "Cheers!" to see the ingredients and instructions used to make the cocktail. There is also a recommendation on the type of glass usually used for serving the cocktail and a witty giph corresponding to the drink.  
+A user can input the name of a cocktail of their choice and click "Cheers!" to see the ingredients and instructions used to make the cocktail. There is also a recommendation on the type of glass usually used for serving the cocktail and a witty gif corresponding to the drink.  
 
 A user can also click on the "I'm feeling lucky" button to be presented with information related to a randomly selected drink. 
 
