@@ -11,7 +11,9 @@ html {
     margin-top: 100%;
     padding-bottom: 25%;
    } 
-
+img{
+  max-height: 900px;
+}
 body {
     width: 90%;
     margin: 0 auto;
