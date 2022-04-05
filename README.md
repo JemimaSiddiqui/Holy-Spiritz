@@ -2,7 +2,7 @@
 
 Project 1 by Andrew, Leo, Rob and Jemima. 
 
-# About the Project - Weather Dashboard 
+# About the Project - Holy Spiritiz 
  
 The Holy Spritiz Main Page allows users to search for cocktails of their choice to be presented with the ingredients, instruction, glass recommended to be used to serve the selected cocktail and a witty gif related to the cocktail. Users can also see a list of their recently searched drinks (up to 7 drinks). They can also search for a cocktail randomly selected for them. 
 
