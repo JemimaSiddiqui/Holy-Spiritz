@@ -75,11 +75,11 @@ A user can also click on the "I'm feeling lucky" button to be presented with inf
 
 ![Input field and "Cheers!" button](./assets/images/user_input.png)
 
-3. Ingredients, Instruction, Glass Recommendation and Giph:
+3. Ingredients, Instruction, Glass Recommendation and Gif:
 
 Below is an image of the page presented to the user once the search a type of cocktail, which in this case is Rum. 
 
-![Ingredients, Instruction, Glass Recommendation and Giph](./assets/images/cocktail_page_image.png)
+![Ingredients, Instruction, Glass Recommendation and Gif](./assets/images/cocktail_page_image.png)
 
 4. Search History: 
 
